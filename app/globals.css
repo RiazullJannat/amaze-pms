@@ -73,3 +73,30 @@ html.lenis, html.lenis body {
                     linear-gradient(to bottom, rgba(148,163,184,0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+/* Shimmer — for live indicators and skeleton loaders */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.06) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Gentle float — for floating KPI badges */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Ticker slide-up transition helper */
+@keyframes slide-up-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+

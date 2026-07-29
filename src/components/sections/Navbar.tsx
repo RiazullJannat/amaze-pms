@@ -14,6 +14,40 @@ const NAV_LINKS = [
   { label: "FAQ", href: "#faq" },
 ];
 
+/* Rotating social-proof messages in the announcement bar */
+const TICKER_MESSAGES = [
+  "🟢 47 hotels signed up this week",
+  "⭐ Rated 4.9/5 across 1,200+ reviews",
+  "🚀 14-day free trial — no card needed",
+  "📈 Average 35% uplift in direct bookings",
+];
+
+function AnnouncementBar() {
+  const [idx, setIdx] = React.useState(0);
+
+  React.useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % TICKER_MESSAGES.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="w-full bg-indigo-600/15 border-b border-indigo-500/20 py-1.5 px-4 text-center overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={idx}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.35 }}
+          className="text-[11px] sm:text-xs font-semibold text-indigo-200 tracking-wide"
+        >
+          {TICKER_MESSAGES[idx]}
+        </motion.p>
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -38,9 +72,24 @@ export function Navbar() {
 
   return (
     <>
+      {/* Announcement bar — hidden after scroll */}
+      <AnimatePresence>
+        {!isScrolled && (
+          <motion.div
+            initial={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 right-0 z-50 overflow-hidden"
+          >
+            <AnnouncementBar />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed left-0 right-0 z-50 transition-all duration-300",
+          isScrolled ? "top-0" : "top-[30px] sm:top-[30px]",
           isScrolled
             ? "backdrop-blur-md bg-[#0a0f1d]/90 border-b border-slate-800/60 shadow-[0_1px_30px_rgba(0,0,0,0.3)]"
             : "bg-transparent"

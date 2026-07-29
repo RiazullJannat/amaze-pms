@@ -7,6 +7,7 @@ const TESTIMONIALS = [
     name: "Sarah Jenkins",
     role: "General Manager",
     company: "The Grand Boutique Hotel",
+    location: "London, UK",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300",
     stat: "12 hrs/week saved",
   },
@@ -15,6 +16,7 @@ const TESTIMONIALS = [
     name: "Michael Chang",
     role: "Owner & Managing Director",
     company: "Coastal Retreat Resorts",
+    location: "Singapore",
     avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300",
     stat: "40% revenue uplift",
   },
@@ -23,7 +25,8 @@ const TESTIMONIALS = [
     name: "Elena Rodriguez",
     role: "Operations Director",
     company: "Sunvista Luxury Villas",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300",
+    location: "Dubai, UAE",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300",
     stat: "3-day onboarding",
   },
 ];
@@ -61,7 +64,7 @@ export function TestimonialsSection() {
                 </div>
 
                 <blockquote className="text-slate-300 leading-relaxed mb-5 sm:mb-6 flex-1 relative z-10 text-sm sm:text-[15px]">
-                  "{t.quote}"
+                  &ldquo;{t.quote}&rdquo;
                 </blockquote>
 
                 <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-bold text-emerald-400 mb-5 sm:mb-6 self-start relative z-10">
@@ -77,6 +80,7 @@ export function TestimonialsSection() {
                   <div className="min-w-0">
                     <div className="text-sm font-bold text-slate-200 truncate">{t.name}</div>
                     <div className="text-xs text-slate-500 truncate">{t.role} · {t.company}</div>
+                    <div className="text-[10px] text-slate-600 font-medium mt-0.5">📍 {t.location}</div>
                   </div>
                 </div>
               </div>

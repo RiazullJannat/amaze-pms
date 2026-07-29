@@ -21,10 +21,10 @@ function useCounter(to: number, duration = 2000, start = false) {
 }
 
 const METRICS = [
-  { value: 99.9, suffix: "%", label: "System Uptime", description: "Enterprise-grade infrastructure" },
-  { value: 35, suffix: "%", label: "Direct Booking Increase", description: "Average across 500+ properties" },
-  { value: 20, suffix: "+", label: "Integrated OTA Channels", description: "Booking.com, Airbnb, Expedia & more" },
-  { value: 24, suffix: "/7", label: "Priority Support", description: "Real humans, not chatbots" },
+  { value: 4200, suffix: "+",  label: "Properties Onboarded",      description: "Hotels, villas & guesthouses worldwide" },
+  { value: 99.9, suffix: "%",  label: "System Uptime",             description: "Enterprise-grade infrastructure"         },
+  { value: 35,   suffix: "%",  label: "Direct Booking Increase",   description: "Average across all properties"           },
+  { value: 20,   suffix: "+",  label: "Integrated OTA Channels",   description: "Booking.com, Airbnb, Expedia & more"     },
 ];
 
 function MetricCard({ value, suffix, label, description, index }: {
@@ -32,8 +32,14 @@ function MetricCard({ value, suffix, label, description, index }: {
 }) {
   const ref = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  // Special case: 99.9 — keep one decimal place
   const displayValue = suffix === "%" && value === 99.9 ? (isInView ? "99.9" : "0") : null;
   const count = useCounter(Number.isInteger(value) ? value : Math.floor(value), 1800, isInView);
+
+  // For 4200 show "4,200"
+  const formatted = value === 4200
+    ? count.toLocaleString()
+    : (displayValue ?? count);
 
   return (
     <motion.div
@@ -46,7 +52,7 @@ function MetricCard({ value, suffix, label, description, index }: {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
       <div className="text-5xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 mb-3">
-        {displayValue ?? count}{suffix}
+        {formatted}{suffix}
       </div>
       <div className="text-base font-bold text-slate-200 mb-1">{label}</div>
       <div className="text-sm text-slate-500">{description}</div>
