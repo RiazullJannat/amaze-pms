@@ -146,7 +146,7 @@ export function DemoModal() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Decorative top glow bar */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-purple-400 to-cyan-400 rounded-t-3xl" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-violet-400 to-cyan-400 rounded-t-3xl" />
               {/* Ambient glow */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[150px] bg-indigo-600/15 blur-[60px] rounded-full pointer-events-none" />
 
@@ -199,7 +199,7 @@ export function DemoModal() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Decorative top glow bar */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-purple-400 to-cyan-400" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-violet-400 to-cyan-400" />
               {/* Ambient glow */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-indigo-600/15 blur-[80px] rounded-full pointer-events-none" />
 

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/*
+ * ── Design Token Layer ───────────────────────────────────────────────────────
+ * Single source of truth for brand colours used across all sections.
+ * --brand-glow:   the indigo base RGB used for box-shadows
+ * --page-bg:      the one true page background
+ * --surface-1:    slightly lighter card surface
+ * --surface-2:    interactive / active card surface
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
 @theme {
   --color-background: #0a0f1d;
   --color-foreground: #f8fafc;
@@ -14,10 +23,17 @@
 
 :root {
   color-scheme: dark;
+  /* Brand gradient — used inline everywhere for consistency */
+  --grad-brand: linear-gradient(to right, #818cf8, #a78bfa, #67e8f9);
+  --grad-btn:   linear-gradient(to right, #4f46e5, #06b6d4);
+  --page-bg:    #0a0f1d;
+  --surface-1:  rgba(15, 23, 42, 0.60);  /* cards */
+  --surface-2:  rgba(17, 24, 39, 0.80);  /* active / open state */
+  --glow-brand: 99, 102, 241;            /* indigo-500 RGB for box-shadows */
 }
 
 body {
-  background-color: #0a0f1d;
+  background-color: var(--page-bg);
   color: var(--color-foreground);
   font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;

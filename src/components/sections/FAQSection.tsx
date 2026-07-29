@@ -55,8 +55,8 @@ export function FAQSection() {
                   className={cn(
                     "rounded-2xl border transition-all duration-300 overflow-hidden",
                     isOpen
-                      ? "border-indigo-500/40 bg-[#111827]/80 shadow-[0_0_30px_rgba(99,102,241,0.1)]"
-                      : "border-slate-800/60 bg-[#0d1424]/60 hover:border-slate-700"
+                      ? "border-indigo-500/40 bg-[#0f172a]/90 shadow-[0_0_30px_rgba(99,102,241,0.1)]"
+                      : "border-slate-800/60 bg-slate-900/40 hover:border-slate-700"
                   )}
                 >
                   <button

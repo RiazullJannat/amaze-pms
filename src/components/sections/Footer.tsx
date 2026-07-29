@@ -10,7 +10,7 @@ const FOOTER_LINKS = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-800/50 bg-[#080d1a] pt-20 pb-10">
+    <footer className="border-t border-slate-800/40 pt-20 pb-10" style={{ backgroundColor: "var(--page-bg)" }}>
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Top row */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">

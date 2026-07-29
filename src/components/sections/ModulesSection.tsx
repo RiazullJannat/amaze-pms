@@ -9,8 +9,8 @@ import { motion } from "framer-motion";
 export function ModulesSection() {
   return (
     <Section id="modules" className="relative z-10">
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/10 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-violet-500/8 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/8 blur-[150px] rounded-full pointer-events-none -z-10" />
 
       <div className="text-center mb-16 md:mb-24 relative z-10">
         <FadeIn>

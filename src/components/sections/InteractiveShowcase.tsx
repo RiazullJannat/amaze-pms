@@ -71,7 +71,7 @@ export function InteractiveShowcase() {
 
   return (
     <section id="showcase" className="py-20 sm:py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cyan-500/8 blur-[100px] sm:blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cyan-500/10 blur-[100px] sm:blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}

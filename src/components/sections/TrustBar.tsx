@@ -20,15 +20,15 @@ function LogoItem({ name, color }: { name: string; color: string }) {
 
 export function TrustBar() {
   return (
-    <section className="py-16 border-y border-slate-800/50 bg-[#080d1a] relative overflow-hidden">
+    <section className="py-16 border-y border-slate-800/40 relative overflow-hidden" style={{ backgroundColor: "var(--page-bg)" }}>
       <FadeIn>
         <p className="text-center text-sm font-semibold text-slate-500 uppercase tracking-[0.15em] mb-8 px-4">
           Trusted by 500+ Luxury Hotels, Resorts & Property Managers Worldwide
         </p>
       </FadeIn>
       {/* Gradient masks on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#080d1a] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#080d1a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a0f1d] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a0f1d] to-transparent z-10 pointer-events-none" />
 
       <div className="flex overflow-hidden">
         {/* Infinite marquee: two copies of the list side by side */}

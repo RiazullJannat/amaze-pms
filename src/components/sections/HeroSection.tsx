@@ -53,7 +53,7 @@ export function HeroSection() {
         }}
       />
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] sm:w-[700px] md:w-[900px] h-[50vh] sm:h-[500px] md:h-[600px] pointer-events-none">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600/20 via-purple-600/15 to-cyan-500/20 blur-[100px] sm:blur-[120px]" />
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600/20 via-violet-600/15 to-cyan-500/20 blur-[100px] sm:blur-[120px]" />
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-gradient-to-t from-[#0a0f1d] to-transparent pointer-events-none z-10" />
 
@@ -76,7 +76,7 @@ export function HeroSection() {
         <FadeIn delay={0.1}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight text-slate-50 leading-[1.05] mb-5 sm:mb-6 max-w-5xl">
             The All-In-One{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400">
               Property &amp; Hotel
             </span>{" "}
             Management Platform

@@ -33,9 +33,9 @@ export function PricingSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 items-stretch md:items-center">
           {PLANS.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.08}>
-              <div className={cn("relative rounded-2xl border p-6 sm:p-8 flex flex-col overflow-hidden transition-all duration-300 h-full", plan.popular ? "border-indigo-500/60 bg-[#111827]/80 shadow-[0_0_60px_rgba(99,102,241,0.2)] md:scale-105 z-10" : "border-slate-800/60 bg-[#0d1424]/60 hover:border-slate-700")}>
+              <div className={cn("relative rounded-2xl border p-6 sm:p-8 flex flex-col overflow-hidden transition-all duration-300 h-full", plan.popular ? "border-indigo-500/50 bg-[#0f172a]/90 shadow-[0_0_60px_rgba(99,102,241,0.18)] md:scale-105 z-10" : "border-slate-800/50 bg-slate-900/40 hover:border-slate-700")}>
                 {plan.popular && <>
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-purple-400 to-cyan-400" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-violet-400 to-cyan-400" />
                   <div className="absolute top-4 right-4"><span className="inline-flex items-center gap-1 rounded-full bg-indigo-600 px-2.5 py-1 text-[11px] font-bold text-white"><Zap size={9} fill="currentColor" /> Most Popular</span></div>
                 </>}
                 <div className="mb-5">
